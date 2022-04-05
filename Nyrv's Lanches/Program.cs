@@ -10,8 +10,25 @@ namespace Nyrv_s_Lanches
     {
         static void Main(string[] args)
         {
-            
-            Console.Write("Insira seu nome:");
+            struct Combo
+            {
+            public string hamburguer;
+            public string batata;
+            public string bebida;
+
+            public Combo(string hamburguer, string batata, string bebida)
+
+
+                List<Combo> combos = new List<Combo>();
+            combos.Add(new Combo("Picanha", "BatataFrita", "Bebida");
+            combos.Add(new Combo("Duplo", "BatataFrita", "Bebida");
+            combos.Add(new Combo("Cheddar", "BatataFrita", "Bebida");
+            combos.Add(new Combo("Frango", "BatataFrita", "Bebida");
+            combos.Add(new Combo("Peixe", "BatataFrita", "Bebida");
+            combos.Add(new Combo("Veggan", "BatataFrita", "Bebida");
+            }
+
+        Console.Write("Insira seu nome:");
             Console.WriteLine();
             string nome = Console.ReadLine();
 
@@ -33,18 +50,8 @@ namespace Nyrv_s_Lanches
             if (resposta1 == "s")
             {
                 Console.WriteLine($"Boa escolha, esses são os nossos combos");
-
-                List<Combo> combos = new List<Combo>();
-                combos.Add(new Combo("Picanha", "BatataFrita", "Refrigerante"));
-                combos.Add(new Combo("Duplo", "BatataFrita", "Refrigerante"));
-                combos.Add(new Combo("Cheddar", "BatataFrita", "Refrigerante"));
-                combos.Add(new Combo("Frango", "BatataFrita", "Refrigerante"));
-                combos.Add(new Combo("Peixe", "BatataFrita", "Refrigerante"));
-                combos.Add(new Combo("Veggan", "BatataFrita", "Refrigerante"));
-
-
-
             }
+
             else
             {
 
