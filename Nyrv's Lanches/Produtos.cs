@@ -49,7 +49,7 @@ namespace Nyrv_s_Lanches
                 parts.Add(new Produtos() { PartNome = "Combo Ovo        ", PartId = 9799, PartPreco = 28.99f });
                 parts.Add(new Produtos() { PartNome = "Combo Frango     ", PartId = 9849, PartPreco = 26.99f });
                 parts.Add(new Produtos() { PartNome = "Combo Peixe      ", PartId = 9899, PartPreco = 26.99f });
-                parts.Add(new Produtos() { PartNome = "Combo Veggan     ", PartId = 9849, PartPreco = 34.99f });
+                parts.Add(new Produtos() { PartNome = "Combo Veggan     ", PartId = 9949, PartPreco = 34.99f });
 
                 Console.WriteLine("Quantidade de produtos cadastrados: {0}", parts.Count); //Quantidade de produtos cadastrados
                 Console.WriteLine();
@@ -97,7 +97,7 @@ namespace Nyrv_s_Lanches
                             {
                                 if (r4 == "n")
                                 {
-                                    Console.WriteLine("Deseja continuar buscando no sistema? Digite s/n");
+                                    Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
                                     string r9 = Console.ReadLine().ToLower();
                                     if (r9 == "s")
                                     {
@@ -112,7 +112,7 @@ namespace Nyrv_s_Lanches
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Deseja continuar buscando no sistema? Digite s/n");
+                                    Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
                                     break;
                                     //loop2 = false; // painel de ferramentas
                                 }
@@ -123,7 +123,7 @@ namespace Nyrv_s_Lanches
                     {
                         if (r3 == "n")
                         {
-                            Console.WriteLine("Deseja continuar buscando no sistema? Digite s/n");
+                            Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
                             string r6 = Console.ReadLine().ToLower();
                             if (r6 == "s")
                             {
