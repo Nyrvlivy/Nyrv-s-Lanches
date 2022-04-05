@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,78 +9,139 @@ namespace Nyrv_s_Lanches
 {
     internal class Program
     {
+        public class Funcionario //funcionários autorizados
+        {
+            public Funcionario() {}
+
+            public string Nome { get; set; }
+            public int Idade { get; set; }
+
+            public Funcionario(string nome, int idade)
+            {
+                this.Nome = nome;
+                this.Idade = idade;
+            }
+        }
+
+        static List<Funcionario> funcionarios;
+
         static void Main(string[] args)
         {
+            funcionarios = new List<Funcionario>();
+            funcionarios.Add(new Funcionario("Luiz", 20));
+            funcionarios.Add(new Funcionario("Paula", 21));
+            funcionarios.Add(new Funcionario("Jorge",22 ));
+            funcionarios.Add(new Funcionario("Paula", 24));
+            funcionarios.Add(new Funcionario("Camila", 25));
+            funcionarios.Add(new Funcionario("Matheus", 24));
+            funcionarios.Add(new Funcionario("Lívia", 23));
+
+
+            //foreach (Funcionario p in funcionarios)
+            //{
+            //    Console.WriteLine(p.Nome + " " + p.Idade);
+            //}
+
+            /*
             struct Combo
             {
-            public string hamburguer;
-            public string batata;
-            public string bebida;
-
-            public Combo(string hamburguer, string batata, string bebida)
-
-
+                public string Hamburguer;
+                public string BatataFrita;
+                public string Bebida;
+                public Combo(string hamburguer, string batatafrita, string bebida)
+                {
+                    Hamburguer = hamburguer;
+                    BatataFrita = batatafrita;
+                    Bebida = bebida;
+                }
+                public void ExibirDados()
+                {
+                    Console.WriteLine($"Hamburguer : {Hamburguer} " +
+                                      $"\nBatataFrita: {BatataFrita} " +
+                                      $"\nBebida     : {Bebida}" +
+                                      $"");
+                }
+            }
+            */
+            /*
+            static void Main(string[] args)
+            {
+                
                 List<Combo> combos = new List<Combo>();
-            combos.Add(new Combo("Picanha", "BatataFrita", "Bebida");
-            combos.Add(new Combo("Duplo", "BatataFrita", "Bebida");
-            combos.Add(new Combo("Cheddar", "BatataFrita", "Bebida");
-            combos.Add(new Combo("Frango", "BatataFrita", "Bebida");
-            combos.Add(new Combo("Peixe", "BatataFrita", "Bebida");
-            combos.Add(new Combo("Veggan", "BatataFrita", "Bebida");
-            }
+                combos.Add(new Combo("Picanha", "Batata frita", "Bebida"));
+                combos.Add(new Combo("Double", "Batata frita", "Bebida"));
+                combos.Add(new Combo("Cheddar", "Batata frita", "Bebida"));
+                combos.Add(new Combo("Frango", "Batata frita", "Bebida"));
+                combos.Add(new Combo("Peixe", "Batata frita", "Bebida"));
+                combos.Add(new Combo("Veggan", "Batata frita", "Bebida"));
+                foreach (Combo combo in combos)
+                {
+                    combo.ExibirDados();
+                    }
+                */
 
-        Console.Write("Insira seu nome:");
-            Console.WriteLine();
-            string nome = Console.ReadLine();
 
-            Console.WriteLine();
 
-            Console.WriteLine($"Bem-vindo(a) ao sistema de atendimento online da Nyrv's Lanches, prazer em recebê-lo(a), {nome}!");
-            Console.WriteLine();
+/*
 
-            Console.WriteLine($"Para iniciar seu pedido, selecione as opções de acordo com a sua preferência!" +
-                              $"\n");
-            
 
-            Console.WriteLine($"\nGostaria de adquirir um de nossos deliciosos combos com hamburguer, batata-frita e bebida? (são mais em conta, no tamanho do seu bolso e da sua fome)? Digite s/n para cotinuar" +
-                              $"\n");
+            Console.Write("Insira seu nome para autenticação:");
+                Console.WriteLine();
+                string nome2 = Console.ReadLine();
 
-            string resposta1 = Console.ReadLine().ToLower();
-            Console.WriteLine();
+                //if nome2 
 
-            if (resposta1 == "s")
-            {
-                Console.WriteLine($"Boa escolha, esses são os nossos combos");
-            }
+                Console.WriteLine();
 
-            else
-            {
+                Console.WriteLine($"Bem-vindo(a) ao sistema de inventário da Nyrv's Lanches, {nome2}!");
+                Console.WriteLine();
 
-                if (resposta1 == "n")
-                Console.WriteLine("Okay, vamos efetuar seu pedido por partes");
+                Console.WriteLine($"Qual ferramenta deseja utilizar?" +
+                                  $"\n");
+
+
+                Console.WriteLine($"\nGostaria de adquirir um de nossos deliciosos combos com hamburguer, batata-frita e bebida? (são mais em conta, no tamanho do seu bolso e da sua fome)? Digite s/n para cotinuar" +
+                                  $"\n");
+
+                string resposta1 = Console.ReadLine().ToLower();
+                Console.WriteLine();
+
+                if (resposta1 == "s")
+                {
+                    Console.WriteLine($"Boa escolha, esses são os nossos combos");
+                }
 
                 else
                 {
-                    
-                   Console.WriteLine("Por favor, utilize apenas a letra 's' ou 'n' para responder!");
+
+                    if (resposta1 == "n")
+                        Console.WriteLine("Okay, vamos efetuar seu pedido por partes");
+
+                    else
+                    {
+
+                        Console.WriteLine("Por favor, utilize apenas a letra 's' ou 'n' para responder!");
+                    }
                 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Console.ReadKey();
+
             }
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-            Console.ReadKey();
-
         }
     }
-}
+
+*/
+
