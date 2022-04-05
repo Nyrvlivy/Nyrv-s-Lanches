@@ -15,20 +15,47 @@ namespace Nyrv_s_Lanches
             Console.WriteLine();
             string nome = Console.ReadLine();
 
+            Console.WriteLine();
+
             Console.WriteLine($"Bem-vindo(a) ao sistema de atendimento online da Nyrv's Lanches, prazer em recebê-lo(a), {nome}!");
+            Console.WriteLine();
 
             Console.WriteLine($"Para iniciar seu pedido, selecione as opções de acordo com a sua preferência!" +
-                                $"\nGostaria de adquirir um de nossos deliciosos combos? (são mais em conta, no tamanho do seu bolso e da sua fome)? Digite s/n para cotinuar" +
-                                $"\n");
-            string resposta1 = Console.ReadLine();
-            if (resposta1 != "s","n")
-                Console.WriteLine("Por favor, utilize apenas a letra 's' ou 'n' para responder!");
+                              $"\n");
+            
+
+            Console.WriteLine($"\nGostaria de adquirir um de nossos deliciosos combos com hamburguer, batata-frita e bebida? (são mais em conta, no tamanho do seu bolso e da sua fome)? Digite s/n para cotinuar" +
+                              $"\n");
+
+            string resposta1 = Console.ReadLine().ToLower();
+            Console.WriteLine();
+
+            if (resposta1 == "s")
+            {
+                Console.WriteLine($"Boa escolha, esses são os nossos combos");
+
+                List<Combo> combos = new List<Combo>();
+                combos.Add(new Combo("Picanha", "BatataFrita", "Refrigerante"));
+                combos.Add(new Combo("Duplo", "BatataFrita", "Refrigerante"));
+                combos.Add(new Combo("Cheddar", "BatataFrita", "Refrigerante"));
+                combos.Add(new Combo("Frango", "BatataFrita", "Refrigerante"));
+                combos.Add(new Combo("Peixe", "BatataFrita", "Refrigerante"));
+                combos.Add(new Combo("Veggan", "BatataFrita", "Refrigerante"));
+
+
+
+            }
             else
             {
-                if (resposta1 == "s")
-                    Console.WriteLine(Boa escolha, esses são os nossos combos);
+
+                if (resposta1 == "n")
+                Console.WriteLine("Okay, vamos efetuar seu pedido por partes");
+
                 else
-                    Console.WriteLine(Okay, vamos efetuar seu pedido por partes);
+                {
+                    
+                   Console.WriteLine("Por favor, utilize apenas a letra 's' ou 'n' para responder!");
+                }
             }
            
 
