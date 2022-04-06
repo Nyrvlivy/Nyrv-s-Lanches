@@ -70,13 +70,30 @@ namespace Nyrv_s_Lanches
                                   $"\n");
 
                 int opcaoPainel = int.Parse(Console.ReadLine());
+                switch (opcaoPainel)
+                {
+                    case 1: // FERRAMENTA 1 - INFORMAÇÕES DA TABELA
+
+                        Console.WriteLine($"\n###################################" +
+                                          $"\nINFORMAÇÕES TABELA DE PRODUTOS" +
+                                          $"\n###################################" +
+                                          $"\n" +
+                                          $"\n" +
+                                          $"\nCAPACIDADE:" +
+                                          $"\nLotação máxima de produtos:............{0}uniddes", parts.Capacity,"" +
+                                          $""); 
 
 
-                // FERRAMENTA 1
+                        Console.WriteLine("\nLotação máxima de produtos:............{0}uniddes", parts.Capacity); //Quantidade máxima de produtos na lista e no inventário.
+                        Console.WriteLine("\nQuantidade de produtos cadastrados:....{0}", parts.Count); //Quantidade de produtos cadastrados
+                        Console.WriteLine();
 
-                Console.WriteLine("\nLotação máxima de produtos:         {0}u", parts.Capacity); //Quantidade máxima de produtos na lista e no inventário.
-                Console.WriteLine("Quantidade de produtos cadastrados: {0}", parts.Count); //Quantidade de produtos cadastrados
-                Console.WriteLine();
+
+                }
+                
+
+
+                
 
                 // FERRAMENTA 2 - VISUALIZAR
 
@@ -109,10 +126,7 @@ namespace Nyrv_s_Lanches
                             Console.WriteLine("\nDeseja buscar por outro ID? Digite s/n");
                             string r4 = Console.ReadLine().ToLower();
                             Console.WriteLine();
-                            if (r4 == "s")
-                            {
-                                break;
-                            }
+                            if (r4 == "s") { }
                             else if (r4 == "n")
                             {
                                 Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
@@ -135,13 +149,10 @@ namespace Nyrv_s_Lanches
                         Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
                         string r6 = Console.ReadLine().ToLower();
                         if (r6 == "s") goto painel;
-                        else
+                        else if (r6 == "n")
                         {
-                            if (r6 == "n")
-                            {
-                                Console.WriteLine("Okay, você foi desconectado do sistema e deverá efetuar autenticação para acessar novamente! Até...");
-                                Environment.Exit(0);
-                            }
+                            Console.WriteLine("Okay, você foi desconectado do sistema e deverá efetuar autenticação para acessar novamente! Até...");
+                            Environment.Exit(0);
                         }
                     }
                     else
@@ -153,7 +164,7 @@ namespace Nyrv_s_Lanches
 
             }
 
-            
+
         }
     }
 }
