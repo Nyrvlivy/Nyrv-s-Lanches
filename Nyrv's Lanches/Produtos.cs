@@ -70,100 +70,109 @@ namespace Nyrv_s_Lanches
                                   $"\n");
 
                 int opcaoPainel = int.Parse(Console.ReadLine());
+
                 switch (opcaoPainel)
                 {
                     case 1: // FERRAMENTA 1 - INFORMAÇÕES DA TABELA
 
                         Console.WriteLine($"\n###################################" +
-                                          $"\nINFORMAÇÕES TABELA DE PRODUTOS" +
-                                          $"\n###################################" +
-                                          $"\n" +
-                                          $"\n" +
-                                          $"\nCAPACIDADE:" +
-                                          $"\nLotação máxima de produtos:............{0}uniddes", parts.Capacity,"" +
-                                          $""); 
+                                              $"\nINFORMAÇÕES TABELA DE PRODUTOS" +
+                                              $"\n###################################" +
+                                              $"\n" +
+                                              $"\n" +
+                                              $"\nCAPACIDADE:" +
+                                              $"\nLotação máxima de produtos:............{0}uniddes", parts.Capacity, "" +
+                                              $"");
 
 
                         Console.WriteLine("\nLotação máxima de produtos:............{0}uniddes", parts.Capacity); //Quantidade máxima de produtos na lista e no inventário.
                         Console.WriteLine("\nQuantidade de produtos cadastrados:....{0}", parts.Count); //Quantidade de produtos cadastrados
                         Console.WriteLine();
 
+                        Console.WriteLine();
+                        Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
+                        string r1 = Console.ReadLine().ToLower();
 
-                }
-                
+                        if (r1 == "s") goto painel;
+                        else Environment.Exit(0);
+                        return;
 
+                    case 2:     // FERRAMENTA 2 - VISUALIZAR
 
-                
-
-                // FERRAMENTA 2 - VISUALIZAR
-
-                foreach (Produtos aPart in parts)
-                {
-                    Console.WriteLine(aPart);
-                }
-
-                // FERRAMENTA 3 - BUSCA POR ID E PRODUTO
-
-                while (true)
-
-                {
-
-                    Console.WriteLine();
-                    Console.WriteLine("\nDeseja efetuar uma busca por ID de algum produto ou combo? Digite s/n");
-                    string r3 = Console.ReadLine().ToLower();
-                    Console.WriteLine();
-
-                    if (r3 == "s")
-                    {
-                        while (true)
+                        foreach (Produtos aPart in parts)
                         {
-                            Console.WriteLine("Digite o valor do ID, com 4 números:");
-                            int valorID = int.Parse(Console.ReadLine());
+                            Console.WriteLine(aPart);
+                        }
 
-                            Console.WriteLine("\nContém produto com o seguinte ID {0}: {1}", valorID, parts.Contains(new Produtos { PartId = valorID }));
-                            // LEMBRETE: CONSEGUIR LOCALIZAR DESCRIÇÃO DO PRODUTO E PREÇO PELO ID
+                        Console.WriteLine();
+                        Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
+                        string r2 = Console.ReadLine().ToLower();
 
-                            Console.WriteLine("\nDeseja buscar por outro ID? Digite s/n");
-                            string r4 = Console.ReadLine().ToLower();
+                        if (r2 == "s") goto painel;
+                        else Environment.Exit(0);
+                        return;
+
+                    case 3:     // FERRAMENTA 3 - BUSCA POR ID E PRODUTO
+
+                        while (true)
+
+                        {
                             Console.WriteLine();
-                            if (r4 == "s") { }
-                            else if (r4 == "n")
+                            Console.WriteLine("\nDeseja efetuar uma busca por ID de algum produto ou combo? Digite s/n");
+                            string r3 = Console.ReadLine().ToLower();
+                            Console.WriteLine();
+
+                            if (r3 == "s")
+                            {
+                                while (true)
+                                {
+                                    Console.WriteLine("Digite o valor do ID, com 4 números:");
+                                    int valorID = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine("\nContém produto com o seguinte ID {0}: {1}", valorID, parts.Contains(new Produtos { PartId = valorID }));
+                                    // LEMBRETE: CONSEGUIR LOCALIZAR DESCRIÇÃO DO PRODUTO E PREÇO PELO ID
+
+                                    Console.WriteLine("\nDeseja buscar por outro ID? Digite s/n");
+                                    string r4 = Console.ReadLine().ToLower();
+                                    Console.WriteLine();
+                                    if (r4 == "s") { }
+                                    else if (r4 == "n")
+                                    {
+                                        Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
+                                        string r9 = Console.ReadLine().ToLower();
+
+                                        if (r9 == "s") goto painel;
+                                        else Environment.Exit(0);
+                                    }
+
+                                    else
+                                    {
+                                        Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
+                                        goto painel;
+                                    }
+
+                                }
+                            }
+                            else if (r3 == "n")
                             {
                                 Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
-                                string r9 = Console.ReadLine().ToLower();
-
-                                if (r9 == "s") goto painel;
-                                else Environment.Exit(0);
+                                string r6 = Console.ReadLine().ToLower();
+                                if (r6 == "s") goto painel;
+                                else if (r6 == "n")
+                                {
+                                    Console.WriteLine("Okay, você foi desconectado do sistema e deverá efetuar autenticação para acessar novamente! Até...");
+                                    Environment.Exit(0);
+                                }
                             }
-
                             else
                             {
-                                Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
-                                goto painel;
+                                Console.Write("Por favor! Irei perguntar novamente! Pressione qualquer tecla para continuar!");
                             }
+                        }
 
-                        }
-                    }
-                    else if (r3 == "n")
-                    {
-                        Console.WriteLine("Quer voltar ao Painel de Ferramentas? Digite s/n");
-                        string r6 = Console.ReadLine().ToLower();
-                        if (r6 == "s") goto painel;
-                        else if (r6 == "n")
-                        {
-                            Console.WriteLine("Okay, você foi desconectado do sistema e deverá efetuar autenticação para acessar novamente! Até...");
-                            Environment.Exit(0);
-                        }
-                    }
-                    else
-                    {
-                        Console.Write("Por favor! Irei perguntar novamente! Pressione qualquer tecla para continuar!");
-                    }
+
                 }
-
-
             }
-
 
         }
     }
